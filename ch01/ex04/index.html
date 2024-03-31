@@ -1,0 +1,30 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+<!--<script>-->
+      <!--let life = { answer: 42 };-->
+      <!--console.log(life.answer);-->
+      <!--life.answer = 0;-->
+      <!--console.log(life.answer);-->
+    <!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+      let life = { answer: 42 };
+      console.log({...life});
+      life.answer = 0;
+      console.log({...life});
+    </script>
+</body>
+</html>
+
+/*想定していた挙動を見せたのは、開発者ツールを開いた状態のタブでHTMLを開く場合だった。その際は1つ目が42、2つ目が0だった。
+ *一方、HTMLを開いた後に開発者ツールを開いた場合は、どちらも0だった。
+ *原因:コンソールに参照として出力しているから。最初からコンソールを表示していると、リアルタイムでlifeの値が参照されるため
+ *5行目で設定された42が参照される。一方、後からコンソールを出すと、そのタイミングでlifeの値を参照するため、7行目で再設定
+ *された0の値が参照される。
+/*

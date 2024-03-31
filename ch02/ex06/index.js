@@ -1,0 +1,1 @@
+export function fizzbuzz() {let ret = [];  for (let x = 1; x <= 100; x++) {    if (x % 15 === 0) ret.push("FizzBuzz");    else if (x % 3 === 0) ret.push("Fizz");    else if (x % 5 === 0) ret.push("Buzz");    else ret.push(x);  }  return ret.join("\n") + "\n";}
