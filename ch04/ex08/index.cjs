@@ -18,4 +18,5 @@ console.log(a === void 0);
  * → 現在ではundefinedを変数名として使用することは、コード管理やデバッグが困難になってしまうという理由で非推奨とされており※、
  * 　undefinedが変数として使われることがないから？
  * 　※MDNに記載あり。(https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/undefined)
+ * 　ブラウザではECMAのとあるバージョンから使えなくなっている。
  */

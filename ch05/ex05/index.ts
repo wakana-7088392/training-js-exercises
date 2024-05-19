@@ -11,3 +11,7 @@ export const deleteOdd = (obj: any) => {
   console.log(obj);
 };
 deleteOdd(example);
+
+/**
+ * hasOwnProperty　他のクラスを継承したプロパティを除外する
+ */

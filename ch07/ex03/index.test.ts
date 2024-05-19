@@ -44,7 +44,7 @@ test("every", () => {
         arr[index + 1]--;
       }
       return elem < 3;
-    }),
+    })
   ).toBeTruthy();
   expect(original).toStrictEqual([1, 1, 2]);
 });
@@ -64,7 +64,7 @@ test("some", () => {
         arr[index + 1]--;
       }
       return elem > 3;
-    }),
+    })
   ).toBeFalsy();
   expect(original).toStrictEqual([1, 1, 2]);
 });

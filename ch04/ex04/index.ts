@@ -10,3 +10,5 @@ export const bitCount = (num: number) => {
 };
 
 console.log(bitCount(0b111));
+
+// >>だと、仮に-にした場合、while文だと無限ループになる

@@ -18,5 +18,7 @@ console.log(x);
  * 結果：5が出力される。
  *
  * 理由：catchブロックに例外を処理するコードがないため、finallyブロックに移動し、
- * 　　　finallyブロックでcontinueするためループが継続するため。
+ * 　　　finallyブロックでcontinueしてループが継続するため。
+ * for文をbreakすることがない
+ * break文はループ文やswitch文を終了させるもの。
  */

@@ -40,4 +40,7 @@ export const checkHolidaySwitch = (day: string) => {
  * 　2択の場合はわかりやすい。
  * switch文
  * 　複数選択肢がある場合はわかりやすい。
+ *
+ * falseのものは全てdefaultでも問題なかった
+ *
  */

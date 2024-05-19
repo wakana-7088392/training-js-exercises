@@ -32,6 +32,7 @@ function resize1(params: any) {
 resize1(params1);
 resize1(params2);
 function resize2(params: any) {
+  //?.条件付きプロパティアクセス
   let maxWidth = params?.maxWidth ?? 600;
   let maxHeight = params?.maxHeight ?? 480;
   console.log({ maxWidth, maxHeight });

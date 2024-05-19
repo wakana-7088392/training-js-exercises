@@ -1,15 +1,15 @@
 let res = "";
-const demoNormal = function () {
-  try {
-    res += "try\n";
-  } catch (e) {
-    res += "catch\n";
-  } finally {
-    res += "finally\n";
-  }
-  return res;
-};
-console.log("正常な処理:\n" + demoNormal());
+// const demoNormal = function () {
+//   try {
+//     res += "try\n";
+//   } catch (e) {
+//     res += "catch\n";
+//   } finally {
+//     res += "finally\n";
+//   }
+//   return res;
+// };
+// console.log("正常な処理:\n" + demoNormal());
 const demoFail = function () {
   try {
     res += "try\n";
