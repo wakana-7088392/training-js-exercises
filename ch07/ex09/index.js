@@ -1,0 +1,11 @@
+var _a, _b, _c, _d;
+console.log("𠮷野家"[0]);
+console.log("👨‍👨‍👧‍👧"[0]);
+var moji = "𠮷";
+var emoji = "👨‍👨‍👧‍👧";
+console.log((_a = moji.charCodeAt(0)) === null || _a === void 0 ? void 0 : _a.toString(16));
+console.log((_b = emoji.charCodeAt(0)) === null || _b === void 0 ? void 0 : _b.toString(16));
+var moji2 = "𠮷野家"[0];
+var emoji2 = "👨‍👨‍👧‍👧"[0];
+console.log((_c = moji2.codePointAt(0)) === null || _c === void 0 ? void 0 : _c.toString(16));
+console.log((_d = emoji2.codePointAt(0)) === null || _d === void 0 ? void 0 : _d.toString(16));
