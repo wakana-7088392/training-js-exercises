@@ -1,0 +1,16 @@
+実装したアルゴリズム：マージソート
+データ列を限界まで分裂し、マージしていく。
+分裂時に時間はかからない。
+マージをする際に小さい順にソートして順番を変えていくが、この時各段はn個データがあるため
+各段の計算時間はnになる。
+n個のデータを1つになるまで分割していくと分割した段の数はlog n段ある。
+
+各段のデータ数×各段の数が計算時間になるため
+n × log nでO(n log n)という時間計算量になる。
+実装したアルゴリズムの入力の配列長 n に対する時間計算量：O(n log n)
+
+参考にしたサイト：
+https://qiita.com/drken/items/872ebc3a2b5caaa4a0d0
+https://note.com/tasting/n/nb85f082c4ab2
+https://qiita.com/suzuki0430/items/31445325bb105d1f3abc
+https://note.com/tasting/n/nb85f082c4ab2
