@@ -1,7 +1,7 @@
-let protoSym = Symbol("protoPropnameOK");
+let protoSym1 = Symbol("protoPropnameOK");
 let protoSym2 = Symbol("protoPropnameNG");
 const proto = { x: "protoX", y: "protoY" };
-proto[protoSym] = "protoSym";
+proto[protoSym1] = "protoSym";
 Object.defineProperty(proto, protoSym2, {
   value: "列挙不可",
   enumerable: false,
@@ -25,6 +25,7 @@ Object.defineProperty(o, "c", {
  * 期待結果
  * ・オブジェクトoにある列挙可の独自プロパティa,b,oSymが配列に格納される
  * ・オブジェクトoにある列挙可な継承プロパティであるx,yの少なくとも2つが配列に格納される
+ * ・(任意)オブジェクトoにある列挙可な継承プロパティであるprotoSym1が配列に格納される
  */
 
 export const getProperty = (o: Object) => {
