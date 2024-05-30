@@ -1,5 +1,5 @@
 // 足し算
-const add = (a: number[][], b: number[][]) => {
+export const add = (a: number[][], b: number[][]) => {
   // 戻り値を入れる箱(2次元配列)を作る
   let table = new Array(Math.max(a.length, b.length));
   for (let x = 0; x < Math.max(a.length, b.length); x++) {
