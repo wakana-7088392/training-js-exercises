@@ -1,9 +1,9 @@
-import { withResource } from "./index.js";
+import { withResource } from "./index.ts";
 
 describe("withResource", () => {
   it("should do process and call close finally", () => {
     const resource = {
-      called: [],
+      called: [] as string[],
       doA() {
         this.called.push("doA");
       },
@@ -24,7 +24,7 @@ describe("withResource", () => {
 
   it("should call close when an error occurs", () => {
     const resource = {
-      called: [],
+      called: [] as string[],
       doA() {
         this.called.push("doA");
         throw new Error("something wrong");

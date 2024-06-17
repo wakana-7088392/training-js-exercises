@@ -1,11 +1,7 @@
-class Resource {
-    ...
-    /** リソース解放のため利用終了時に呼び出すこと */
-    close() { ... }
+export function withResource(resource, callback) {
+  try {
+    callback(resource);
+  } finally {
+    resource.close();
   }
-  
-  const resource = new Resource(...);
-  resource.doA();
-  resource.doB();
-  resource.close(); // これを忘れるとリソースがリークする
-  
+} // 終了時に resource.close が自動で呼ばれる
