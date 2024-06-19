@@ -1,6 +1,6 @@
-function f(input) {
-  const f = new Function(`return "Hello, " + ${input}`);
-  console.log(f());
-}
+// function f(input) {
+//   const f = new Function(`return "Hello, " + ${input}`);
+//   console.log(f());
+// }
 
-f("let = 1");
+// f("let = 1");
