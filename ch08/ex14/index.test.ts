@@ -11,7 +11,7 @@ describe("ch08/ex14", () => {
     expect(isNonZero(-0.5)).toBe(true);
   });
   test("catching", () => {
-    const safeJsonParse = catching(JSON.parse, (e) => {
+    const safeJsonParse = catching(JSON.parse, (e: any) => {
       return { error: e.toString() };
     });
     expect(safeJsonParse('{"a": 1}')).toEqual({ a: 1 });

@@ -25,7 +25,7 @@ export const catching = (f1: any, f2: any) => {
   };
 };
 
-const safeJsonParse = catching(JSON.parse, (e) => {
+const safeJsonParse = catching(JSON.parse, (e: any) => {
   return { error: e.toString() };
 });
 
