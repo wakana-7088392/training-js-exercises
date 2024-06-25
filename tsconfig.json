@@ -6,6 +6,7 @@
     "moduleResolution": "Node16",
     // 型チェックが厳密になる。JSのプロジェクトに徐々に導入するのではなく最初からTSで始める場合、基本有効にする
     "strict": true,
+    // "noImplicitAny": false,
     // JSファイルを出力しない
     "noEmit": true,
     // 出力されるJSがESのどのバージョンと互換性を持ったJSになるか

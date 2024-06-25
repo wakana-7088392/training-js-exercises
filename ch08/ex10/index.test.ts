@@ -10,7 +10,7 @@ describe("addMyCall", () => {
   });
 
   test("When given function has 1 arg, then it can call this", () => {
-    const f = function (this: any, x) {
+    const f = function (this: any, x: any) {
       return this.a + x;
     } as any;
     addMyCall(f);
@@ -18,7 +18,7 @@ describe("addMyCall", () => {
   });
 
   test("When given function has multiple args, then it can call this", () => {
-    const f = function (this: any, x, y, z, u, v) {
+    const f = function (this: any, x: any, y: any, z: any, u: any, v: any) {
       return this.a + x + y + z + u + v;
     } as any;
     addMyCall(f);
