@@ -12,11 +12,14 @@ type Action =
   | "stopAlarm"; // アラームを止める
 
 // 目覚まし時計クラス
-class AlarmClock {
+export class AlarmClock {
   private state: State;
+  getState() {
+    return this.state;
+  }
 
-  constructor() {
-    this.state = "normal";
+  constructor(state: State = "normal") {
+    this.state = state;
   }
 
   // アラーム設定イベント
