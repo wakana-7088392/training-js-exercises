@@ -1,4 +1,5 @@
-class C {
+export class C {
+  num = 1;
   private x = 42;
 
   getX() {
@@ -6,7 +7,7 @@ class C {
   }
 }
 
-class A {
+export class A {
   getX() {
     const x = 42;
     return function () {
@@ -15,7 +16,7 @@ class A {
   }
 }
 
-class B {
+export class B {
   get getX() {
     const x = 42;
     return function () {
