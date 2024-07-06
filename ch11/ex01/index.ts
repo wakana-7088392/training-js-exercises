@@ -1,6 +1,6 @@
-class Foo {}
+export class Foo {}
 
-class TypeMap<K extends new (...args: any[]) => any, V> {
+export class TypeMap<K extends new (...args: any[]) => any, V> {
   map;
   constructor() {
     this.map = new Map();
@@ -23,9 +23,9 @@ class TypeMap<K extends new (...args: any[]) => any, V> {
 
 const typeMap = new TypeMap();
 typeMap.set(String, "string");
-typeMap.set(String, 123);
+typeMap.set(Number, 123);
 typeMap.set(Foo, new Foo());
-typeMap.set(Date, "not a date"); // -> Error
+// typeMap.set(Date, "not a date"); // -> Error
 
 console.log(typeMap.get(String)); // -> "string"
 console.log(typeMap.get(Number)); // -> 123
