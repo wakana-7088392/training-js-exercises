@@ -1,5 +1,7 @@
 // これから (N, K) と (K, M) の行列の乗算を行う (この値は色々変更して試すこと)
-const [N, K, M] = [100, 200, 300];
+// const [N, K, M] = [100, 200, 300];
+const [N, K, M] = [10, 20, 30];
+// イメージ：Aの列K(colsA:k)、行がN(rowsA:i)、Bの列がM(colsB:j)、行がK(rowsB:k)
 
 // 配列版: (N, K) の行列を要素数 N * K の1次元配列で表現する ((i, j) は array[K * i + j] で参照)
 const lhsA = Array(N * K)
@@ -13,6 +15,16 @@ const resultA = Array(N * M).fill(0.0);
 function arrayMultiply() {
   resultA.fill(0.0);
   // 問題: ここで resultA に lhsA と rhsA の乗算結果を格納してね
+  for (let i = 0; i < N; i++) {
+    for (let j = 0; j < M; j++) {
+      for (let k = 0; k < K; k++) {
+        // lhsA[K * i + k]：行列lhsAのi行k列目の要素を参照する。K個分その列には値があるためK * iで開始位置を特定する
+        // lhsA[M * k + j]：行列lhsAのk行j列目の要素を参照する。M個分その列には値があるためM * kで開始位置を特定する
+        resultA[M * i + j] += lhsA[K * i + k] * rhsA[M * k + j];
+      }
+    }
+  }
+  return resultA;
 }
 
 // 型付き配列版 (Float64Array 以外の型も試してみると良い)
@@ -23,6 +35,13 @@ const resultB = new Float64Array(N * M).fill(0.0);
 function typedArrayMultiply() {
   resultB.fill(0.0);
   // 問題: ここで resultB に lhsB と rhsB の乗算結果を格納してね
+  for (let i = 0; i < N; i++) {
+    for (let j = 0; j < M; j++) {
+      for (let k = 0; k < K; k++) {
+        resultB[M * i + j] += lhsB[K * i + k] * rhsB[M * k + j];
+      }
+    }
+  }
 }
 
 const TEST_TIMES = 100;
