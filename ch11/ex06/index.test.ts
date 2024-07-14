@@ -1,7 +1,7 @@
 import { isEmailAddress } from "./index.ts";
 
-// local-partおよびdomainのdot-atomのみ考慮する
-// またCWFSを含むdot-atomは受け付けないものとする
+// local-part(@より左の文字列)およびdomain(@より右の文字列)のdot-atom(A-Z, a-z, !#$%&'*+/=?~^_{|}~`)のみ考慮する
+// またCFWS(Folding White Space and Comments)を含むdot-atomは受け付けないものとする
 describe("isEmailAddress", () => {
   it("checks if given string is e-mail address or not", () => {
     expect(isEmailAddress("foo@example.com")).toBe(true);
