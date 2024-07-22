@@ -1,5 +1,5 @@
-const stats = require("stats.js");
-const BitSet = require("sets.js").BitSet;
+const stats = require("./stats.mjs");
+const BitSet = require("./sets.mjs").BitSet;
 
 let s = new BitSet(100);
 s.insert(10);

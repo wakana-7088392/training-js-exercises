@@ -1,3 +1,28 @@
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ([
+/* 0 */,
+/* 1 */
+/***/ ((__unused_webpack_module, exports) => {
+
+const sum = (x, y) => x + y;
+const square = (x) => x * x;
+exports.mean = (data) => data.reduce(sum) / data.length;
+exports.stddev = function (d) {
+  let m = exports.mean(d);
+  return Math.sqrt(
+    d
+      .map((x) => x - m)
+      .map(square)
+      .reduce(sum) /
+      (d.length - 1)
+  );
+};
+
+
+/***/ }),
+/* 2 */
+/***/ ((module) => {
+
 /**
  * AbstractSetクラスでは、has()抽象メソッドのみを定義する。
  */
@@ -202,3 +227,45 @@ module.exports = class BitSet extends AbstractWritableSet {
 
 BitSet.bits = new Uint8Array([1, 2, 4, 8, 16, 32, 64, 128]);
 BitSet.masks = new Uint8Array([~1, ~2, ~4, ~8, ~16, ~32, ~64, ~128]);
+
+
+/***/ })
+/******/ 	]);
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+const stats = __webpack_require__(1);
+const ex01_BitSet = (__webpack_require__(2).BitSet);
+
+let s = new ex01_BitSet(100);
+s.insert(10);
+s.insert(20);
+s.insert(30);
+let average = stats.mean([...s]);
+
+/******/ })()
+;
