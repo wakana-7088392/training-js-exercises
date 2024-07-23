@@ -1,8 +1,13 @@
-export function greet(name) {
+// 関数のデフォルトのエクスポート
+export default function greetTanuki(name) {
   return `Hello, ${name}!`;
 }
 
-export default class Tanuki {
+export function eat() {
+  return "eat";
+}
+
+export class Tanuki {
   constructor(name, age) {
     this.name = name;
     this.age = age;
