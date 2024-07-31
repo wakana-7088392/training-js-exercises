@@ -2,7 +2,7 @@ export function greet(name) {
   return `Hello, ${name}!`;
 }
 
-// クラスのデフォルトのエクスポート
+// デフォルトのクラスのエクスポート
 export default class Dog {
   constructor(name, age) {
     this.name = name;

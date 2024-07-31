@@ -1,4 +1,4 @@
-// 関数のデフォルトのエクスポート
+// デフォルトの関数のエクスポート
 export default function greetTanuki(name) {
   return `Hello, ${name}!`;
 }

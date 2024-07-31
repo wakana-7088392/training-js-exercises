@@ -1,7 +1,8 @@
+// 関数のエクスポート
 exports.greet = function (name) {
   return `Hello, ${name}!`;
 };
-
+// クラスのエクスポート
 exports.Human = class {
   constructor(name, age) {
     this.name = name;
