@@ -5,7 +5,9 @@
  * sortJapanese 関数
  */
 export function sortJapanese(arr: string[]) {
+  // sensitivityをbaseに大文字小文字等を無視するように設定する
   const collator = new Intl.Collator("ja", { sensitivity: "base" });
+  // sortで文字列の並び替えを行う
   return arr.sort(collator.compare);
 }
 
@@ -21,6 +23,7 @@ export function toJapaneseDateString(date: Date) {
     month: "numeric" | "short";
     day: "numeric" | "2-digit";
   } = {
+    // 時代を付ける
     era: "long",
     year: "numeric",
     month: "numeric",
