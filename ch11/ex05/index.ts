@@ -24,10 +24,14 @@ export function detectFileType(data: ArrayBuffer) {
 
   for (let key of Object.keys(fileTypes)) {
     const value = fileTypes[key];
+    // 配列の長さが異なる場合は次のループにいく
     if (value.length !== data.byteLength) continue;
+    // 値が異なる段階で次のループへいく
     for (let i = 0; i < data.byteLength; i++) {
       if (value[i] !== dv.getUint8(i)) break;
     }
+    // ZIPとGIFについては複数のパターンがあるため
+    // いずれかのパターンに当てはまる場合は該当の拡張子の文字列を返す
     if (key === "ZIP1" || key === "ZIP2" || key === "ZIP3") return "ZIP";
     if (key === "GIF1" || key === "GIF2") return "GIF";
     return key;

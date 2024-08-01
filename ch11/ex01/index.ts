@@ -8,9 +8,11 @@ export class TypeMap<K extends new (...args: any[]) => any, V> {
   set(key: K, value: V) {
     // プリミティブ型かの判定をする
     if (typeof value !== "object") {
+      // プリミティブ型であればtypeofでkeyとvalueの関係性が妥当かを判断する。
       if (key.name.toLowerCase() !== typeof value) {
         throw new Error("value error");
       }
+      // それ以外はinstanceofで妥当かを判断する。
     } else if (!(value instanceof key)) {
       throw new Error("value error");
     }

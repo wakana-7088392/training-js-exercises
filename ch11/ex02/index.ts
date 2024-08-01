@@ -2,9 +2,11 @@
 export function cache(f: (obj: object) => any) {
   const cache = new WeakMap();
   return function (obj: object) {
+    // キャッシュが残っている場合はそこから値を返す
     if (cache.has(obj)) {
       return cache.get(obj);
     } else {
+      // キャッシュがなければ関数を呼び出して結果をsetしたうえで返す。
       const res = f(obj);
       cache.set(obj, res);
       return res;

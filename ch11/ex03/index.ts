@@ -8,6 +8,7 @@ export function changeLittleToBig(uInt32Array: Uint32Array) {
   const output = new DataView(res.buffer);
   for (let i = 0; i < uInt32Array.length; i++) {
     const offset = i * 4;
+    // リトルエンディアンで取り出した値をビッグエンディアン形式に変えて書き戻す。
     output.setUint32(offset, input.getUint32(offset, true), false);
   }
   return res;
@@ -19,11 +20,13 @@ export function changeBigToLittle(uInt32Array: Uint32Array) {
   const output = new DataView(res.buffer);
   for (let i = 0; i < uInt32Array.length; i++) {
     const offset = i * 4;
+    // ビッグエンディアンで取り出した値をリトルエンディアン形式に変えて書き戻す。
     output.setUint32(offset, input.getUint32(offset, false), true);
   }
   return res;
 }
 
+// 値を１つずつ出力して確認する関数
 export function printArray(uInt32Array: Uint32Array, littleEndian: boolean) {
   const dataView = new DataView(uInt32Array.buffer);
   for (let i = 0; i < uInt32Array.length; i++) {
@@ -32,6 +35,7 @@ export function printArray(uInt32Array: Uint32Array, littleEndian: boolean) {
   }
 }
 
+// 配列に置き換える関数
 export function getArray(uInt32Array: Uint32Array, littleEndian: boolean) {
   const res = new Array();
   const dataView = new DataView(uInt32Array.buffer);
