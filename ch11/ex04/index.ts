@@ -20,7 +20,7 @@ function arrayMultiply() {
       for (let k = 0; k < K; k++) {
         // lhsA[K * i + k]：行列lhsAのi行k列目の要素を参照する。K個分その列には値があるためK * iで開始位置を特定する
         // lhsA[M * k + j]：行列lhsAのk行j列目の要素を参照する。M個分その列には値があるためM * kで開始位置を特定する
-        resultA[M * i + j] += lhsA[K * i + k] * rhsA[M * k + j];
+        resultA[N * i + j] += lhsA[K * i + k] * rhsA[M * k + j];
       }
     }
   }
@@ -38,7 +38,7 @@ function typedArrayMultiply() {
   for (let i = 0; i < N; i++) {
     for (let j = 0; j < M; j++) {
       for (let k = 0; k < K; k++) {
-        resultB[M * i + j] += lhsB[K * i + k] * rhsB[M * k + j];
+        resultB[N * i + j] += lhsB[K * i + k] * rhsB[M * k + j];
       }
     }
   }

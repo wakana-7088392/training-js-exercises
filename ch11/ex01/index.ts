@@ -31,3 +31,5 @@ typeMap.set(Foo, new Foo());
 
 console.log(typeMap.get(String)); // -> "string"
 console.log(typeMap.get(Number)); // -> 123
+
+// prototypeを使って実装する方法もある

@@ -5,6 +5,7 @@ export function detectFileType(data: ArrayBuffer) {
   interface obj {
     [key: string]: any;
   }
+  // 複数パターンあるものは一つのオブジェクトにして、値を二次元配列にすると追加等メンテがしやすいコードになりそう
   const fileTypes: obj = {
     PDF: new Uint8Array([
       0x25, 0x50, 0x44, 0x46, 0x2d, 0x31, 0x2e, 0x34, 0x0a, 0x25, 0xc3, 0xa4,

@@ -17,6 +17,7 @@ export function sortJapanese(arr: string[]) {
  * toJapaneseDateString 関数
  */
 export function toJapaneseDateString(date: Date) {
+  // 型をIntl.DateTimeFormatを使用すると簡単だったかも
   const opts: {
     era: "long" | "short" | "narrow";
     year: "numeric" | "2-digit";

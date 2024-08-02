@@ -25,3 +25,5 @@ describe("ch11/ex02", () => {
   //     expect(mockFn).toHaveBeenCalledTimes(2);
   //   });
 });
+
+// メモリリークをわざと起こして強制的にGCを起こせば良さそう

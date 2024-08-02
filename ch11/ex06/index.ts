@@ -1,5 +1,6 @@
 export const isEmailAddress = (address?: string | null) => {
   // addressが未定義または、addressの長さが254より多い、@までの文字数が64より多い場合はfalseを返す
+  // ドメインの最大値は252らしい
   if (!address || address.length > 254 || address.indexOf("@") > 64) {
     return false;
   }
