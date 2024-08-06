@@ -1,15 +1,25 @@
-function* primes() {}
+function* serial(): Generator<number> {
+  for (let i = 2; true; i++) {
+    yield i;
+  }
+}
 
-export function* counter() {
-  let num = 0;
-  for (;;) {
-    try {
-      yield num++;
-    } catch (e) {
-      // throw()が呼び出されたタイミングで初期化し、この場合は初期値0を返す。
-      console.log("初期化します。");
-      num = 0;
-      yield num++;
+function* filter<T>(
+  iterable: Iterable<T>,
+  predicate: (value: T) => boolean
+): Generator<T> {
+  const iter = iterable[Symbol.iterator]();
+  for (let v = iter.next(); !v.done; v = iter.next()) {
+    if (predicate(v.value)) {
+      yield v.value;
     }
   }
+}
+
+export function* primes(
+  iter: Generator<number> = serial()
+): Generator<number, void, unknown> {
+  const prime = iter.next().value;
+  yield prime;
+  yield* primes(filter(iter, (n) => n % prime !== 0));
 }
