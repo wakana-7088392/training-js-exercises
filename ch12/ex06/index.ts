@@ -1,0 +1,29 @@
+import * as fs from "fs";
+import * as path from "path";
+
+// インターフェースを使って返却するプロパティを定義
+interface Data {
+  path: string;
+  isDirectory: boolean;
+}
+
+/**
+ * 指定されたディクトリ内のファイル/ディレクトリを再帰的に探索するジェネレータ関数
+ * @param rootPath ディレクトリのパス
+ */
+export function* walk(rootPath: string): Generator<Data> {
+  const dirent = fs.readdirSync(rootPath, { withFileTypes: true });
+  for (let d of dirent) {
+    const changePath = path.join(rootPath, d.name);
+    const isDirectory = d.isDirectory();
+    yield { path: changePath, isDirectory: isDirectory };
+    if (isDirectory) {
+      yield* walk(changePath);
+    }
+  }
+}
+
+// const a = walk("C:/Users/r23600265/Documents/training-js-exercises/ch12");
+// for (let i = 0; i < 10; i++) {
+//   console.log(a.next().value);
+// }
