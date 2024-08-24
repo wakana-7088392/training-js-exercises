@@ -2,7 +2,7 @@ import { fetchFirstFileSize, fetchSumOfFileSizes } from "./index.ts";
 import { readdir, stat } from "node:fs/promises";
 import { join } from "node:path";
 
-describe("ch13/ex04", () => {
+describe("ch13/ex08", () => {
   describe("fetchFirstFileSize", () => {
     let mReaddir: jest.SpyInstance;
     let mStat: jest.SpyInstance;
