@@ -16,15 +16,10 @@ export async function fetchSumOfFileSizes(path: string) {
   const files = await readdir(path);
   let total = 0;
   const arr = [];
-  // for文でファイルの数分、サイズを取得してtotalに合算する処理を行うPromiseを配列に格納する
+  // for文でファイルのサイズを一つずつ合算していく
   for (const file of files) {
-    arr.push(
-      stat(join(path, file)).then((stats) => {
-        total += stats.size;
-      })
-    );
+    const stats = await stat(join(path, file));
+    total += stats.size;
   }
-  // サイズの合算が完了するまで待機し、完了したら返す
-  await Promise.all(arr);
   return total;
 }
