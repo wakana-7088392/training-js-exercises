@@ -4,6 +4,8 @@
   "description": "",
   "scripts": {
     "test": "jest --runInBand",
+    "test:browser": "playwright test",
+    "server": "http-server -p 3000",
     "lint": "eslint . --max-warnings=0",
     "format": "prettier --write ."
   },
@@ -11,8 +13,10 @@
   "private": true,
   "type": "module",
   "devDependencies": {
+    "@playwright/test": "^1.47.2",
     "@types/jest": "^29.5.7",
     "@types/lodash": "^4.17.4",
+    "@types/node": "^22.5.5",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "eslint": "^8.51.0",
