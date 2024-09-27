@@ -1,5 +1,4 @@
 node_modulesnode_modules
-*.js
 test-results
 *.tsbuildinfo
 /playwright-report/
