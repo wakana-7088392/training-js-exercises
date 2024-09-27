@@ -1,5 +1,4 @@
 // 無難なもの
-// 入力したキーワードにハイライトをつける
 // 選択したら音声が再生される(音声読み上げ)
 javascript: (function () {
   var text = document.body.innerText;
