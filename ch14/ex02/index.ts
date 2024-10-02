@@ -1,5 +1,4 @@
 export class MyArrayLike<T> {
-  // TODO
   private items: T[];
   constructor(items: T[]) {
     this.items = items;
@@ -9,6 +8,7 @@ export class MyArrayLike<T> {
     return this.items.length;
   }
 
+  // 反復処理できるようにする。
   [Symbol.iterator]() {
     let index = 0;
     const items = this.items;
@@ -28,7 +28,7 @@ export class MyArray<T> extends Array<T> {
   constructor(items: any) {
     super(...items);
   }
-  // TODO
+  // Arrayクラスを返すことで、mapやsliceなどのメソッドがMyArrayではなくArrayインスタンスを返す
   static get [Symbol.species]() {
     return Array;
   }

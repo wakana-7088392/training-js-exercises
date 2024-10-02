@@ -11,6 +11,8 @@ export class HiraganaUtf16 {
     this.hiragana = hiragana;
     this.utf16 = hiragana.charCodeAt(0);
   }
+
+  // <や>で比較できるように定義する
   [Symbol.toPrimitive](hint: any) {
     if (hint === "number") {
       return this.utf16;
@@ -23,6 +25,7 @@ export class HiraganaUtf16 {
 }
 
 export function sortHiragana(arr: HiraganaUtf16[]): HiraganaUtf16[] {
+  // <で比較しているため、数値判定されutf16コード単位の値が返って数値が比較される。
   return arr.sort((a, b) => (a < b ? -1 : 1));
 }
 

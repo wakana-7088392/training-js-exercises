@@ -1,7 +1,7 @@
 export const nestedUnwritableObj = () => {
   // ネストされたオブジェクトの生成
   const obj: any = { c: { d: { e: 3 } } };
-  // 各ネストごとにfreezeする。深いネストからfreezeすることで全てが変更不可になるようにする。
+  // 各ネストごとにfreeze(凍結)する。深いネストからfreezeすることで全てが変更不可になるようにする。
   Object.freeze(obj.c.d);
   Object.freeze(obj.c);
   Object.freeze(obj);
