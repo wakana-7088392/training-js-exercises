@@ -32,7 +32,7 @@ export class MyArray<T> extends Array<T> {
   static get [Symbol.species]() {
     return Array;
   }
-
+  // これにより、以降のメソッドでMyArrayLikeにラップして返すことができる
   map<U>(callback: (value: T, index: number, array: T[]) => U): any {
     const result = super.map(callback);
     return new MyArrayLike(result);
