@@ -56,7 +56,7 @@ form.addEventListener("submit", (e) => {
   input.value = "";
 
   todosAll.push({ id: crypto.randomUUID(), content: todo, completed: false });
-  renderTodos(todosAll);
+  refreshTodos();
 });
 
 window.addEventListener("hashchange", () => {

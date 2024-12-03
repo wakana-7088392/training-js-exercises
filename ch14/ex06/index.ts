@@ -32,3 +32,5 @@ export function addProxyLog<T extends object>(o: T) {
   const proxy = new Proxy(o, handlers);
   return { proxy, log };
 }
+
+// new Proxyを使って返却するパターンもある。

@@ -1,5 +1,6 @@
 import { addProxyLog } from "./index.ts";
 
+// 複数同じメソッドを呼んだ時に問題なく動作するかを確認するテストがあるといい。
 describe("ch14/ex06", () => {
   test("log 1 method", () => {
     const obj = {

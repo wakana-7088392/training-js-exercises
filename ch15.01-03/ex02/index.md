@@ -14,6 +14,11 @@
   4. 8081でもawait import("http://127.0.0.1:8080/index.js")で8080のindex.jsを参照し、8080と同様にアラートが出ることを確認。
 
 - メモ
+
   - --corsを使用すると、http-serverの設定にあるCORS項目がtrueになり、サイトがAccess-Control-Allow-Origin \* になる。これにより、cross-site？が可能になる。
   - http-serverのCORSの設定はデフォルトではdisabledのため--corsでの設定変更が必要。
   - 上記の設定は、参照される側のみ設定すれば問題なかった。
+
+- netlifyというツールがある？
+  - サーバーにおいておく
+  - どれなら許可するかをそのツール側で制御

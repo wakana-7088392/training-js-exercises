@@ -25,3 +25,5 @@ export const writableAndUnconfigurableObj = () => {
   });
   return obj;
 };
+
+// sealを使うと簡潔に作成できる。

@@ -18,3 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     divElement.textContent = inputElement.value;
   });
 });
+
+// 初期値の設定をここでして置く方がリファクタリング時にミスしにくい
+// htmlで設定していると修正が漏れる可能性がある

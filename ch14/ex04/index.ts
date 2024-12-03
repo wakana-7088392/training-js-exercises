@@ -19,6 +19,7 @@ export class HiraganaUtf16 {
     } else if (hint === "string") {
       return this.hiragana;
     } else {
+      // ここは無駄な分岐なので、端折る
       return this.hiragana;
     }
   }

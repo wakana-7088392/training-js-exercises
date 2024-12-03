@@ -28,3 +28,5 @@ export class IgnoreAccentPattern {
       .match(this.pattern);
   }
 }
+
+// /[\u0300-\u036f]/の箇所は定数(変数)化したほうがいい。

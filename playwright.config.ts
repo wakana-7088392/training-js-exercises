@@ -10,7 +10,7 @@ export default defineConfig({
     // 会社 PC は拡張機能オフで起動できない
     launchOptions: { ignoreDefaultArgs: ["--disable-extensions"] },
   },
-  testDir: "./ch15.01-03/ex14",
+  testDir: "./ch15.11-15/ex04",
   testMatch: /(.+\.)?spec\.[jt]s/,
   workers: 1,
   maxFailures: 1,

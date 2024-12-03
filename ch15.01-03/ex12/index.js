@@ -9,3 +9,6 @@ javascript: (function () {
   alert("音声を停止する際は、この画面をとじてください");
   window.speechSynthesis.cancel();
 })();
+
+// create link
+// URLをmd形式で取得する
