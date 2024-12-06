@@ -7,10 +7,10 @@ async function openDatabase() {
       const db = event.target.result;
       db.createObjectStore("todos", { keyPath: "id", autoIncrement: true });
     };
-    request.onsuccess = (event) => {
+    request.onsuccess = (event) => { // 成功時に呼び出される
       resolve(event.target.result);
     };
-    request.onerror = (event) => {
+    request.onerror = (event) => { // 失敗時に呼び出される
       reject(event.target.error);
     };
   });
@@ -27,8 +27,8 @@ async function saveTodos(todos) {
     store.put(todo);
   });
   return new Promise((resolve, reject) => {
-    transaction.oncomplete = () => resolve();
-    transaction.onerror = (event) => reject(event.target.error);
+    transaction.oncomplete = () => resolve(); // トランザクションが完了した時に呼び出される
+    transaction.onerror = (event) => reject(event.target.error); // トランザクションが失敗した時に呼び出される
   });
 }
 

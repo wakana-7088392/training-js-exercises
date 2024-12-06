@@ -3,8 +3,8 @@ const list = document.querySelector("#todo-list");
 const input = document.querySelector("#new-todo");
 
 document.addEventListener("DOMContentLoaded", async () => {
-    // TODO: ここで API を呼び出してタスク一覧を取得し、
-    // 成功したら取得したタスクを appendToDoItem で ToDo リストの要素として追加しなさい
+    // (fetchで実装)ここで API を呼び出してタスク一覧を取得し、
+    // 成功したら取得したタスクを appendToDoItem で ToDo リストの要素として追加する
     const response = await fetch("/api/tasks");
     if (await handleError(response)) {
         return;
@@ -16,21 +16,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 form.addEventListener("submit", async (e) => {
-    // TODO: ここで form のイベントのキャンセルを実施しなさい (なぜでしょう？)
-    // サーバーにリクエストを送信するとページがリロードしてしまうため。 e=フォーム送信イベント
     e.preventDefault();
 
-    // 両端からホワイトスペースを取り除いた文字列を取得する
     const todo = input.value.trim();
     if (todo === "") {
         return;
     }
 
-    // new-todo の中身は空にする
     input.value = "";
 
-    // TODO: ここで API を呼び出して新しいタスクを作成し
-    // 成功したら作成したタスクを appendToDoItem で ToDo リストの要素として追加しなさい
+    // (fetchで実装)ここで API を呼び出して新しいタスクを作成し
+    // 成功したら作成したタスクを appendToDoItem で ToDo リストの要素として追加する
     const response = await fetch("/api/tasks", {
         method: "POST",
         body: JSON.stringify({
@@ -46,7 +42,6 @@ form.addEventListener("submit", async (e) => {
 
 // API から取得したタスクオブジェクトを受け取って、ToDo リストの要素を追加する
 function appendToDoItem(task) {
-    // ここから #todo-list に追加する要素を構築する
     console.log(document.cookie);
     const elem = document.createElement("li");
 
@@ -56,8 +51,8 @@ function appendToDoItem(task) {
 
     const toggle = document.createElement("input");
     toggle.checked = task.status === "completed";
-    // TODO: toggle が変化 (change) した際に API を呼び出してタスクの状態を更新し
-    // 成功したら label.style.textDecorationLine を変更しなさい
+    // (fetchで実装)toggle が変化 (change) した際に API を呼び出してタスクの状態を更新し
+    // 成功したら label.style.textDecorationLine を変更する
     toggle.type = "checkbox";
     toggle.addEventListener("change", async () => {
         const response = await fetch(`/api/tasks/${task.id}`, {
@@ -73,8 +68,8 @@ function appendToDoItem(task) {
         label.style.textDecorationLine = toggle.checked ? "line-through" : "none";
     });
     const destroy = document.createElement("button");
-    // TODO: destroy がクリック (click) された場合に API を呼び出してタスク を削除し
-    // 成功したら elem を削除しなさい
+    // (fetchで実装)destroy がクリック (click) された場合に API を呼び出してタスク を削除し
+    // 成功したら elem を削除する
     const emoji = "\u274C";
     destroy.textContent = emoji;
     destroy.addEventListener("click", async () => {
@@ -86,13 +81,13 @@ function appendToDoItem(task) {
         }
         list.removeChild(elem);
     });
-    // TODO: elem 内に toggle, label, destroy を追加しなさい
     elem.appendChild(toggle);
     elem.appendChild(label);
     elem.appendChild(destroy);
     list.prepend(elem);
 }
 
+// (追加)エラー発生時の処理
 async function handleError(response) {
     if (!response.ok) {
         alert((await response.json()).message);

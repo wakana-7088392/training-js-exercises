@@ -90,6 +90,7 @@ function appendToDoItem(task) {
             }, 3000);
         } catch (e) {
             alert(e);
+            // 操作できるようにする
             enableAction();
             return;
         }
@@ -131,8 +132,11 @@ function appendToDoItem(task) {
     list.prepend(elem);
 }
 
+// API からステータスコード 500 番台のエラーレスポンスが返ってきた場合は
+// 問題 11.16 で作成した retryWithExponentialBackoff を流用 (必要に応じて変更) して fetch のリトライを行う
 async function handleError(response) {
     if (!response.ok) {
+        // 500番台の場合はリトライを行う
         if (response.status >= 500) {
             const success = await new Promise((resolve) => {
                 retryWithExponentialBackoff(() => fetch(response.url, response), 3, resolve);
@@ -141,6 +145,7 @@ async function handleError(response) {
                 alert("リトライに失敗しました。");
             }
         } else {
+            // 500番台以外のエラーはアラートを出す
             alert((await response.json()).message);
         }
         return true;
@@ -148,6 +153,8 @@ async function handleError(response) {
     return false;
 }
 
+// リクエスト送出から 3 秒以上経過してもレスポンスを受信できない場合は
+// リクエストをキャンセルし、リクエストがタイムアウトしたことを alert に表示する
 function fetchWithTimeout(url, options = {}, timeout = 3000) {
     return new Promise((resolve, reject) => {
         const timer = setTimeout(() => {
@@ -167,18 +174,19 @@ function fetchWithTimeout(url, options = {}, timeout = 3000) {
     });
 }
 
+// 通信やリトライが完了するまで ユーザが ToDo リストの追加/削除/変更、及びテキストの編集をできないようにする
 function disableAction() {
     form.querySelector("button").disabled = true;
     input.disabled = true;
     list.querySelectorAll("button, input").forEach(elem => elem.disabled = true);
 }
-
 function enableAction() {
     form.querySelector("button").disabled = false;
     input.disabled = false;
     list.querySelectorAll("button, input").forEach(elem => elem.disabled = false);
 }
 
+//  問題 11.16 で作成した retryWithExponentialBackoff を流用
 async function retryWithExponentialBackoff(
     func,
     maxRetry,
@@ -186,6 +194,7 @@ async function retryWithExponentialBackoff(
 ) {
     const internal = async (retryCount) => {
         try {
+            // 変更箇所
             const result = await func();
             if (result.ok) {
                 callback(true);
