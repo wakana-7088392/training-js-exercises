@@ -1,0 +1,83 @@
+.completed {
+  text-decoration: line-through;
+}
+
+body {
+  background-color: #f8f8f8;
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  border: 2px solid #ff6347; /* トマト色 */
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ff6347; /* トマト色 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e5533d;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  border: 2px solid #ffebcd; /* ベージュ色 */
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li.completed {
+  background-color: #d3ffd3; /* 薄い緑色 */
+  text-decoration: line-through;
+}
+
+.view {
+  display: flex;
+  align-items: center;
+}
+
+.toggle {
+  margin-right: 10px;
+}
+
+label {
+  flex-grow: 1;
+}
+
+.destroy {
+  background-color: #ff6347; /* トマト色 */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.destroy:hover {
+  background-color: #e5533d;
+}

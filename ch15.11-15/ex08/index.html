@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Request/Response</title>
+    <style>
+        .request-container {
+            margin-bottom: 20px;
+        }
+
+        .response {
+            margin-top: 10px;
+            color: green;
+        }
+
+        .error {
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WebSocket Request/Response</h1>
+    <div id="requests">
+        <div class="request-container">
+            <input type="text" class="request-body" placeholder="Enter request body">
+            <div class="response"></div>
+        </div>
+        <div class="request-container">
+            <input type="text" class="request-body" placeholder="Enter request body">
+            <div class="response"></div>
+        </div>
+        <div class="request-container">
+            <input type="text" class="request-body" placeholder="Enter request body">
+            <div class="response"></div>
+        </div>
+        <div class="request-container">
+            <input type="text" class="request-body" placeholder="Enter request body">
+            <div class="response"></div>
+        </div>
+        <div class="request-container">
+            <input type="text" class="request-body" placeholder="Enter request body">
+            <div class="response"></div>
+        </div>
+    </div>
+    <button id="send-requests">Send Requests</button>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

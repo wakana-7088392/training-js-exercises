@@ -1,0 +1,10 @@
+- CommonJSとES Module以外のJavaScriptモジュール
+  - AMD(Asynchronous Module Difinition)
+    - サーバーサイドの仕様であるCommonJSとは異なりクライアントサイド(ブラウザ側)でモジュール形式が使えるようにした仕様。
+    - 非同期でモジュールをロードするので、webページの初期表示をブロックすることができない。また、複数のモジュールを同時にロードできる。
+  - UMD(Universal Module Definition)
+    - モジュールがどの形式で書かれていても利用できるようにした形式。
+  - System.register
+    - ES6で登場したModuleシステムをES5でも使えるようにしたモジュール記法。
+- 参考
+  - https://zenn.dev/ebi_yu/scraps/db4c7d1f3e883a

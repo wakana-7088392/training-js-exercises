@@ -1,0 +1,38 @@
+value1 80 Tokyo
+name hasOwnProperty = true
+age hasOwnProperty = true
+from hasOwnProperty = true
+name propertyIsEnumerable = true
+age propertyIsEnumerable = true
+from propertyIsEnumerable = true
+
+yamada 50 Kyoto
+name hasOwnProperty = true
+age hasOwnProperty = true
+from hasOwnProperty = true
+name propertyIsEnumerable = true
+age propertyIsEnumerable = true
+from propertyIsEnumerable = true
+
+yamada 50 Kyoto
+name hasOwnProperty = true
+age hasOwnProperty = true
+from hasOwnProperty = true
+name propertyIsEnumerable = true
+age propertyIsEnumerable = true
+from propertyIsEnumerable = true
+
+yamada 50 Kyoto
+name hasOwnProperty = true
+age hasOwnProperty = true
+from hasOwnProperty = true
+name propertyIsEnumerable = true
+age propertyIsEnumerable =false
+from propertyIsEnumerable =true
+
+tanaka 50 Kyoto
+file:///C:/Users/XXX/Documents/training-js-exercises/ch06/ex04/index.js:58        
+obj.age = 99;
+        ^
+
+TypeError: Cannot assign to read only property 'age' of object '#<Object>'

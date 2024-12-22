@@ -1,0 +1,26 @@
+body {
+  display: inline;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 5%;
+}
+th,
+td {
+  border: 1px solid #e0cc16fd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f0ecb9;
+}
+h1 {
+  font-size: 2em;
+  color: red;
+}
+h3 {
+  align-items: center;
+}
