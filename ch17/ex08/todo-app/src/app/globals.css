@@ -1,0 +1,176 @@
+:root {
+  background-color: #f0e68c;
+  /* 薄い黄土色の背景色 */
+  font-family: 'Arial', sans-serif;
+  /* フォントファミリーをArialに設定 */
+  color: #4b3621;
+  /* 茶色の文字色 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: #f0e68c;
+    /* 薄い黄土色の背景色 */
+    font-family: 'Arial', sans-serif;
+    /* フォントファミリーをArialに設定 */
+    color: #4b3621;
+    /* 茶色の文字色 */
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+form {
+  display: flex;
+  /* フォーム内の要素をフレックスボックスで配置 */
+  justify-content: center;
+  /* フォーム内の要素を中央揃え */
+  margin-bottom: 20px;
+  /* フォームの下に20pxのマージン */
+}
+
+input[type='text'] {
+  width: 70%;
+  /* テキスト入力の幅を70%に設定 */
+  padding: 10px;
+  /* テキスト入力の内側に10pxのパディング */
+  border: 2px solid #8b4513;
+  /* サドルブラウンの2pxのボーダー */
+  border-radius: 5px;
+  /* 角を5pxの半径で丸める */
+  margin-right: 10px;
+  /* 右側に10pxのマージン */
+  background-color: #fff8dc;
+  /* コーンシルク色の背景色 */
+}
+
+button {
+  padding: 10px 20px;
+  /* ボタンの内側に10pxの上下パディングと20pxの左右パディング */
+  background-color: #8b4513;
+  /* サドルブラウンの背景色 */
+  color: white;
+  /* 白色の文字色 */
+  border: none;
+  /* ボーダーなし */
+  border-radius: 5px;
+  /* 角を5pxの半径で丸める */
+  cursor: pointer;
+  /* カーソルをポインタに変更 */
+}
+
+button:hover {
+  background-color: #a0522d;
+  /* シエナ色の背景色（ホバー時） */
+}
+
+ul {
+  list-style: none;
+  /* リストのスタイルをなしに設定 */
+  padding: 0;
+  /* パディングを0に設定 */
+}
+
+li {
+  background-color: #fff;
+  /* 白色の背景色 */
+  border: 2px solid #d2b48c;
+  /* タン色の2pxのボーダー */
+  border-radius: 5px;
+  /* 角を5pxの半径で丸める */
+  margin-bottom: 10px;
+  /* 下に10pxのマージン */
+  padding: 10px;
+  /* 内側に10pxのパディング */
+  display: flex;
+  /* フレックスボックスで配置 */
+  justify-content: space-between;
+  /* アイテムを両端に配置 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* 影を追加 */
+}
+
+li.completed {
+  background-color: #d3ffd3;
+  /* 薄い緑色の背景色（完了時） */
+  text-decoration: line-through;
+  /* 取り消し線を追加 */
+}
+
+.view {
+  display: flex;
+  /* フレックスボックスで配置 */
+  align-items: center;
+  /* アイテムを中央揃え */
+}
+
+.toggle {
+  margin-right: 10px;
+  /* 右側に10pxのマージン */
+}
+
+.label {
+  flex-grow: 1;
+  /* ラベルをフレックスアイテムとして成長させる */
+  color: #4b3621;
+  /* 茶色の文字色 */
+}
+
+.destroy {
+  background-color: #8b4513;
+  /* サドルブラウンの背景色 */
+  border: none;
+  /* ボーダーなし */
+  color: white;
+  /* 白色の文字色 */
+  padding: 5px 10px;
+  /* 内側に5pxの上下パディングと10pxの左右パディング */
+  border-radius: 5px;
+  /* 角を5pxの半径で丸める */
+  cursor: pointer;
+  /* カーソルをポインタに変更 */
+}
+
+.destroy:hover {
+  background-color: #a0522d;
+  /* シエナ色の背景色（ホバー時） */
+}
+
+/* たぬきの顔を表現するためのスタイル */
+#todo-list li::before {
+  content: '🍃';
+  /* 葉っぱのアイコンを追加 */
+  font-size: 1.5em;
+  /* フォントサイズを1.5emに設定 */
+  margin-right: 10px;
+  /* 右側に10pxのマージン */
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
