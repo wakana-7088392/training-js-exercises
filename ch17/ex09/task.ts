@@ -14,12 +14,12 @@ function isUserObject(obj: any) {
     );
 }
 
-export class TaskManager {
+export class TaskManager<T extends Task> {
     // privateを追加し、_tasksをTask型の配列に指定する
-    private _tasks: Task[] = [];
+    private _tasks: T[] = [];
 
     // タスクを追加する
-    add(task: Task): void {
+    add(task: T): void {
         this._tasks.push(task);
     }
 
@@ -41,7 +41,7 @@ export class TaskManager {
 
     // 引数の関数にマッチするタスクを返す
     // 引数を省略した場合はすべてのタスクを返す
-    getTasks(predicate?: (task: Task) => boolean): Task[] {
+    getTasks(predicate?: (task: T) => boolean): T[] {
         if (predicate === undefined) {
             return this._tasks;
         } else {
